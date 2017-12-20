@@ -9,4 +9,5 @@ COPY nodesource.list /etc/apt/sources.list.d/nodesource.list
 
 RUN apt update \
   && apt -y install nodejs \
-  && apt-get clean
+  && apt-get clean \
+  && npm install -g npm@latest-4
