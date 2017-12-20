@@ -9,7 +9,6 @@ RUN apt update \
     make \
     gcc \
     g++ \
-    git \
   && curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 
 COPY nodesource.list /etc/apt/sources.list.d/nodesource.list
@@ -22,7 +21,12 @@ RUN apt update \
   && npm install --unsafe-perm -g \
     composer-cli \
     composer-playground
-    
+
+# Additional developent tools that are not dependent on above, so container builds can run facter 
+RUN apt -y install \
+    git \
+    telnet
+
 EXPOSE 8080
 
 CMD ["/usr/bin/composer-playground"]
