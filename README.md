@@ -16,7 +16,7 @@ hyper run -d --name=composer --size=l1 -p 8080:8080 -v composer-root:/root igorl
 hyper fip attach <your IP> composer
 ~~~~
    
-Then use http://<your IP>:8080 to access Hyperledger Playground webapp. Note that it's recommended to have at least 4GB of RAM to run Composer, hence L1 size above. At the time of writing this one hour of L1 container on Hyper costs circa $0.10.
+Then use http://\<your IP>:8080 to access Hyperledger Playground webapp. Note that it's recommended to have at least 4GB of RAM to run Composer, hence L1 size above. At the time of writing this one hour of L1 container on Hyper costs circa $0.10.
 
 If you don't want to use Playground, but simply want CLI access, then use the following command to start the container in the interactive mode.
 
