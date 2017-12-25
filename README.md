@@ -24,4 +24,10 @@ If you don't want to use Playground, but simply want CLI access, then use the fo
 hyper run -it --rm --name=composer --size=l1 -v composer-root:/root igorlo/hyperledger-composer bash
 ~~~~
 
+To run composer REST server as a daemon, use the following command (assuming if you have preconfigured cards in /room/.composer):
+
+~~~~
+hyper run -d --rm --name=composer --size=l1 -v composer-root:/root igorlo/hyperledger-composer -p 9090:9090 composer-rest-server -p 9090 -c <card name>
+~~~~
+
 Note that /root is mounted to a persistent volume, so the container could be ephemereal.
