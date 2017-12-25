@@ -20,7 +20,8 @@ RUN apt update \
   && npm install -g npm@latest-4 \
   && npm install --unsafe-perm -g \
     composer-cli \
-    composer-playground
+    composer-playground \
+    composer-rest-server
 
 # Additional developent tools that are not dependent on above, so container builds can run facter 
 RUN apt -y install \
